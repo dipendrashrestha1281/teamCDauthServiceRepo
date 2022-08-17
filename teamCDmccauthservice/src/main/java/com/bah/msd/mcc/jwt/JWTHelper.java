@@ -1,4 +1,4 @@
-package com.bah.msd.mcc.util;
+package com.bah.msd.mcc.jwt;
 import java.util.Date;
 import java.util.Map;
 import com.auth0.jwt.JWT;

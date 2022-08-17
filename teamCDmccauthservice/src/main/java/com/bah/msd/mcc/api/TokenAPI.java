@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bah.msd.mcc.domain.Customer;
 import com.bah.msd.mcc.domain.CustomerFactory;
 import com.bah.msd.mcc.domain.Token;
-import com.bah.msd.mcc.util.JWTHelper;
+import com.bah.msd.mcc.jwt.JWTHelper;
 
 
 
