@@ -25,6 +25,7 @@ import com.bah.msd.mcc.domain.Token;
 @RestController
 @RequestMapping("/register")
 public class RegisterAPI {
+	
 
 	@PostMapping
 	public ResponseEntity<?> registerCustomer(@RequestBody Customer newCustomer, UriComponentsBuilder uri) {
