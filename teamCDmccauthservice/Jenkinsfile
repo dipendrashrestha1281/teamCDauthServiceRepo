@@ -13,7 +13,7 @@ node {
 		parameters: [choice(choices: 'Yes\nNo',
 		description: '', name: 'Pass')]
 		
-		if response=="Yes") {
+		if (response=="Yes") {
 		stage('Release -AuthService'){
 			sh 'gradle -b teamCDmccauthservice/build.gradle -x test'
 			sh 'echo AuthService is ready to release!'
