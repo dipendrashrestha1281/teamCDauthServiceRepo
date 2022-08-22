@@ -4,7 +4,7 @@ node {
 	}
 	
 	stage("Gradle Build - AuthService"){
-		sh 'gradle -b teamCDmccauthservice clean build'
+		sh 'gradle -b teamCDmccauthservice/build.gradle clean build'
 	}
 	
 	stage("User Acceptance Test - AuthService"){
@@ -15,7 +15,7 @@ node {
 		
 		if response=="Yes") {
 		stage('Release -AuthService'){
-			sh 'gradle -b teamCDmccauthservice build -x test'
+			sh 'gradle -b teamCDmccauthservice/build.gradle -x test'
 			sh 'echo AuthService is ready to release!'
 		}
 	  }
