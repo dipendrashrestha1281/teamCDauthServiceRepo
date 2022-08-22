@@ -1,0 +1,23 @@
+node {
+	stage("Checkout - AuthService"){
+		git url: 'http://github.com/dipendrashrestha1281/teamCDauthServiceRepo'
+	}
+	
+	stage("Gradle Build - AuthService"){
+		sh 'gradle -b teamCDmccauthservice clean build'
+	}
+	
+	stage("User Acceptance Test - AuthService"){
+		
+		def response = input message: 'Is this build good to go?',
+		parameters: [choice(choices: 'Yes\nNo',
+		description: '', name: 'Pass')]
+		
+		if response=="Yes") {
+		stage('Release -AuthService'){
+			sh 'gradle -b teamCDmccauthservice build -x test'
+			sh 'echo AuthService is ready to release!'
+		}
+	  }
+	}
+}
