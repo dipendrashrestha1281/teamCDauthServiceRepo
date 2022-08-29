@@ -12,7 +12,7 @@ node {
     }
     
     stage ("Containerize the app-docker build - AuthService") {
-        sh 'docker build --rm -t authapi:v1.0 .'
+        sh 'docker build --rm -t authapi:v1.0 -f teamCDmccauthservice/Dockerfile'
     }
     
     stage ("Inspect the docker image - AuthService"){
