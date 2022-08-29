@@ -8,7 +8,7 @@ node {
 	}
 	
 	stage ("Gradle Bootjar-Package - AuthService") {
-        sh 'gradle bootjar'
+        sh 'gradle -b teamCDmccauthservice/build.gradle bootjar'
     }
     
     stage ("Containerize the app-docker build - AuthService") {
